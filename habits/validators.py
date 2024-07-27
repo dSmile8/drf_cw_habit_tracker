@@ -90,7 +90,6 @@ class RewardValidator:
     pleasant_habit_sign: str
     """
 
-
     def __init__(self, reward, related_habit, pleasant_habit_sign):
         self.reward = reward
         self.related_habit = related_habit
@@ -98,6 +97,6 @@ class RewardValidator:
 
     def __call__(self, habit):
         if habit.get(self.pleasant_habit_sign) and (
-            habit.get(self.reward) or habit.get(self.related_habit)
+                habit.get(self.reward) or habit.get(self.related_habit)
         ):
             raise ValidationError("У приятной привычки не может быть вознаграждения или связанной привычки.")
