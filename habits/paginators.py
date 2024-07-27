@@ -3,15 +3,15 @@ from rest_framework.pagination import PageNumberPagination
 
 class HabitPagination(PageNumberPagination):
     """
-    Custom pagination class for habit-related API endpoints.
+    Пользовательский класс нумерации страниц для конечных точек API, связанных с привычками.
 
-    This class inherits from the PageNumberPagination class provided by Django REST Framework.
-    It overrides the default pagination settings to customize the behavior of the API.
+    Этот класс наследуется от класса PageNumberPagination, предоставленного Django REST Framework.
+    Он переопределяет настройки нумерации страниц по умолчанию для настройки поведения API.
 
-    Attributes:
-    page_size: The number of items to display per page. Default is 5.
-    page_query_param: The query parameter used to specify the page number. Default is "page_size".
-    max_page_size: The maximum number of items allowed per page. Default is 100.
+    Атрибуты:
+    page_size: количество элементов, отображаемых на странице. По умолчанию — 5.
+    page_query_param: параметр запроса, используемый для указания номера страницы. По умолчанию — «page_size».
+    max_page_size: максимальное количество элементов, разрешенное на странице. По умолчанию — 100.
     """
 
     page_size = 5

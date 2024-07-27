@@ -5,14 +5,12 @@ from rest_framework.exceptions import ValidationError
 
 class RelatedHabitValidator:
     """
-    A class to validate related habit and reward fields in a habit model.
+    Класс для проверки связанных полей привычек и вознаграждений в модели привычек.
 
-    Attributes
+    Атрибуты
     ----------
-    related_habit : str
-        The name of the related habit field.
-    reward : str
-        The name of the reward field.
+    related_habit: str
+    reward: str
     """
 
     def __init__(self, related_habit, reward):
@@ -27,12 +25,11 @@ class RelatedHabitValidator:
 
 class DurationValidator:
     """
-    A class to validate the duration of a habit.
+    Класс для проверки продолжительности привычки.
 
-    Attributes
+    Атрибуты
     ----------
-    duration : str
-        The name of the duration field in the habit dictionary.
+    duration: str
     """
 
     def __init__(self, duration):
@@ -47,15 +44,14 @@ class DurationValidator:
 
 class PleasantHabitValidator:
     """
-   A class to validate if a habit is pleasant based on a specific sign.
+    Класс для проверки того, приятна ли привычка по определенному признаку.
 
-   Attributes
+   Атрибуты
    ----------
-   related_habit : str
-       The name of the related habit field in the habit dictionary.
+   related_habit: str
    pleasant_habit_sign : str
-       The name of the pleasant habit sign field in the habit dictionary.
     """
+
     def __init__(self, related_habit, pleasant_habit_sign):
         self.related_habit = related_habit
         self.pleasant_habit_sign = pleasant_habit_sign
@@ -68,13 +64,13 @@ class PleasantHabitValidator:
 
 class PeriodicityValidator:
     """
-    A class to validate the periodicity of a habit.
+    Класс для проверки периодичности привычки.
 
-    Attributes
+    Атрибуты
     ----------
-    periodicity : str
-        The name of the periodicity field in the habit dictionary.
+    periodicity: str
     """
+
     def __init__(self, periodicity):
         self.periodicity = periodicity
 
@@ -85,15 +81,15 @@ class PeriodicityValidator:
 
 class RewardValidator:
     """
-    A class to validate the reward field in a habit model.
+    Класс для проверки поля вознаграждения в модели привычки.
 
-    Attributes
+    Атрибуты
     ----------
-    reward : str
-        The name of the reward field in the habit dictionary.
-    related_habit : str
-        The name of the related habit field in the habit dictionary.
+    reward: str
+    related_habit: str
+    pleasant_habit_sign: str
     """
+
 
     def __init__(self, reward, related_habit, pleasant_habit_sign):
         self.reward = reward
