@@ -4,6 +4,16 @@ from rest_framework.exceptions import ValidationError
 
 
 class RelatedHabitValidator:
+    """
+    A class to validate related habit and reward fields in a habit model.
+
+    Attributes
+    ----------
+    related_habit : str
+        The name of the related habit field.
+    reward : str
+        The name of the reward field.
+    """
 
     def __init__(self, related_habit, reward):
         self.related_habit = related_habit
@@ -16,6 +26,14 @@ class RelatedHabitValidator:
 
 
 class DurationValidator:
+    """
+    A class to validate the duration of a habit.
+
+    Attributes
+    ----------
+    duration : str
+        The name of the duration field in the habit dictionary.
+    """
 
     def __init__(self, duration):
         self.duration = duration
@@ -28,7 +46,16 @@ class DurationValidator:
 
 
 class PleasantHabitValidator:
+    """
+   A class to validate if a habit is pleasant based on a specific sign.
 
+   Attributes
+   ----------
+   related_habit : str
+       The name of the related habit field in the habit dictionary.
+   pleasant_habit_sign : str
+       The name of the pleasant habit sign field in the habit dictionary.
+    """
     def __init__(self, related_habit, pleasant_habit_sign):
         self.related_habit = related_habit
         self.pleasant_habit_sign = pleasant_habit_sign
@@ -40,7 +67,14 @@ class PleasantHabitValidator:
 
 
 class PeriodicityValidator:
+    """
+    A class to validate the periodicity of a habit.
 
+    Attributes
+    ----------
+    periodicity : str
+        The name of the periodicity field in the habit dictionary.
+    """
     def __init__(self, periodicity):
         self.periodicity = periodicity
 
@@ -50,6 +84,16 @@ class PeriodicityValidator:
 
 
 class RewardValidator:
+    """
+    A class to validate the reward field in a habit model.
+
+    Attributes
+    ----------
+    reward : str
+        The name of the reward field in the habit dictionary.
+    related_habit : str
+        The name of the related habit field in the habit dictionary.
+    """
 
     def __init__(self, reward, related_habit, pleasant_habit_sign):
         self.reward = reward
