@@ -3,24 +3,25 @@ from rest_framework import permissions
 
 class IsOwner(permissions.BasePermission):
     """
-    Permission class to check if the user is the owner of the object.
+    Класс разрешений, проверяющий, является ли пользователь владельцем объекта.
 
-    This class inherits from `permissions.BasePermission` and overrides the `has_object_permission` method.
-    It checks if the `owner` attribute of the object matches the `user` attribute of the request.
-    If they match, the method returns `True`, indicating that the user has permission to access the object.
-    Otherwise, it returns `False`.
+    Этот класс наследуется от Permissions.BasePermission и переопределяет метод has_object_permission.
+    Он проверяет, соответствует ли атрибут владельца объекта атрибуту пользователя запроса.
+    Если они совпадают, метод возвращает True, указывая, что у пользователя есть разрешение на доступ к объекту.
+    В противном случае возвращается «False».
     """
 
     def has_object_permission(self, request, view, obj):
-        """Check if the user is the owner of the object.
+        """
+        Проверяет, является ли пользователь владельцем объекта.
 
-        Parameters:
-        - request (Request): The incoming request object.
-        - view (View): The view that is being accessed.
-        - obj (Object): The object being accessed.
+        Параметры:
+        - запрос (Request): объект входящего запроса.
+        - представление (View): представление, к которому осуществляется доступ.
+        - obj (Объект): объект, к которому осуществляется доступ.
 
-        Returns:
-        - bool: `True` if the user is the owner of the object, `False` otherwise.
+        Возврат:
+        - bool: `True`, если пользователь является владельцем объекта, `False` в противном случае.
         """
         if obj.owner == request.user:
             return True
