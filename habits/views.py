@@ -91,7 +91,7 @@ class HabitsRetrieveAPIView(RetrieveAPIView):
 
     serializer_class = HabitSerializer
     queryset = Habit.objects.all()
-    permission_classes = [IsOwner | IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsOwner]
 
 
 class HabitsUpdateAPIView(UpdateAPIView):
